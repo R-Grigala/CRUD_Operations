@@ -1,4 +1,1 @@
-# FastAPI
-learning API with python3
-
-I will continue the work started soon
+Django Angular CRUD Operations | Full Stack Web Development
