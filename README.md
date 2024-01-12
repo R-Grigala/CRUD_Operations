@@ -1,1 +1,1 @@
-Django Angular CRUD Operations | Full Stack Web Development
+Django And Angular CRUD Operations | Full Stack Web Development
