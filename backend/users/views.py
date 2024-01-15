@@ -4,7 +4,7 @@ from .serializer import UserSerializer
 from rest_framework import generics
 
 # user by id -get, update, delete
-class UserDetail(generics.RetrieveDestroyAPIView):
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
