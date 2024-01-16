@@ -1,1 +1,70 @@
-<p>add-user works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-ligth bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Frontend</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggle-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+                    <a class="nav-link" routerLink="/add">Add User</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--content-->
+    <div class="container">
+        <div class="mx-auto w-25" style="max-width: 100%;">
+            <h2 class="text-center mb-3">Add User</h2>
+            <form [formGroup]="form" (ngSubmit)="addUser()">
+                <!--name-->
+                <div class="row">
+                    <div class="col-md-12 form-group md-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" id="name" formControlName="name" class="form-control" placeholder="name" required>
+                    </div>
+                </div>
+                <!--Email-->
+                <div class="row">
+                    <div class="col-md-12 form-group md-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" formControlName="email" class="form-control" placeholder="email" required>
+                    </div>
+                </div>
+                <!--Gender-->
+                <label for="gender" class="form-label">Gender</label>
+                <div class="form-ckeck">
+                    <input class="form-check-input" formControlName="gender" name="gender" id="female" value="female">
+                    <label for="female" class="form-check-label">Female</label>
+                </div>
+                <div class="form-ckeck">
+                    <input class="form-check-input" formControlName="gender" name="gender" id="female" value="female">
+                    <label for="male" class="form-check-label">Male</label>
+                </div>
+                <div class="form-ckeck">
+                    <input class="form-check-input" formControlName="gender" name="gender" id="female" value="female">
+                    <label for="others" class="form-check-label">Others</label>
+                </div>
+
+                <!--button-->
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary w-100" [disabled]="!form.valid">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
