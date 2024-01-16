@@ -1,30 +1,38 @@
 import { Component } from '@angular/core';
-import { UsersService } from '../../users.service';
-import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../../app.service';
 
 @Component({
   selector: 'app-add-user',
-  standalone: true,
-  imports: [],
   templateUrl: './add-user.component.html',
-  styleUrl: './add-user.component.css'
+  styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent {
-  constructor(private userService: UsersService, private router: Router){}
+  
+    constructor(private service: UserService, private router: Router) { }
+  
+    ngOnInit(): void {
+    }
 
-  data: any
+    data: any
 
-  form = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
-    gender: new FormControl('', Validators.required)
-  })
+    form = new FormGroup({
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      gender: new FormControl('', Validators.required)
+    });
 
-  addUser(){
-    this.data = this.form.value
-    this.userService.addUser(this.data).subscribe(data => {
-      this.router.navigate(['/']) // redirect to homepage
-    })
-  }
+    addUser() {
+      this.data = this.form.value;
+      this.service.addUser(this.data).subscribe(data => {
+        this.router.navigate(['/'])
+      })
+    }
+
+    
+
+    
+
+
 }

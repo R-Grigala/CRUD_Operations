@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from 'src/app/app.service';
-import { User } from 'src/app/User';
+import { UserService } from '../../app.service';
 
 @Component({
   selector: 'app-update-user',
